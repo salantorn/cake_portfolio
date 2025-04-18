@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.176eb86a.css",
-    "main.js": "/static/js/main.98e7e1f1.js",
-    "static/media/my.jpg": "/static/media/my.d557c0a17c863c4f7b5e.jpg",
-    "static/media/capstone.png": "/static/media/capstone.b8dcce2154a6a93998ae.png",
-    "static/media/shopee.png": "/static/media/shopee.6fc951f9447aad04121e.png",
-    "static/media/flutter_port.png": "/static/media/flutter_port.6e220cf0dc26c89514eb.png",
-    "static/media/web_port.png": "/static/media/web_port.36d366056d8efd71581a.png",
-    "static/media/bootstrap.png": "/static/media/bootstrap.d8411fac50fa7c6f73b2.png",
-    "static/media/nodejs.png": "/static/media/nodejs.346c5e867990ad56bfcd.png",
-    "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
-    "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
-    "static/media/cake1.png": "/static/media/cake1.398060d666ee2033e650.png",
-    "static/media/react.png": "/static/media/react.bafc2a1dcbb5c8d3aefc.png",
-    "static/media/sass.png": "/static/media/sass.66bd81a2f888a550bdbd.png",
-    "static/media/javascript.png": "/static/media/javascript.ec1c0379d0e87cc38946.png",
-    "static/media/tailwindcss.png": "/static/media/tailwindcss.e55d1867d1aa2bf20813.png",
-    "index.html": "/index.html",
-    "main.176eb86a.css.map": "/static/css/main.176eb86a.css.map",
-    "main.98e7e1f1.js.map": "/static/js/main.98e7e1f1.js.map"
+    "main.css": "/cake_portfolio/static/css/main.4c4253f9.css",
+    "main.js": "/cake_portfolio/static/js/main.ead4e89e.js",
+    "static/media/my.jpg": "/cake_portfolio/static/media/my.d557c0a17c863c4f7b5e.jpg",
+    "static/media/capstone.png": "/cake_portfolio/static/media/capstone.b8dcce2154a6a93998ae.png",
+    "static/media/shopee.png": "/cake_portfolio/static/media/shopee.6fc951f9447aad04121e.png",
+    "static/media/flutter_port.png": "/cake_portfolio/static/media/flutter_port.6e220cf0dc26c89514eb.png",
+    "static/media/web_port.png": "/cake_portfolio/static/media/web_port.36d366056d8efd71581a.png",
+    "static/media/bootstrap.png": "/cake_portfolio/static/media/bootstrap.d8411fac50fa7c6f73b2.png",
+    "static/media/nodejs.png": "/cake_portfolio/static/media/nodejs.346c5e867990ad56bfcd.png",
+    "static/media/bootstrap-icons.woff?": "/cake_portfolio/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
+    "static/media/bootstrap-icons.woff2?": "/cake_portfolio/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
+    "static/media/cake1.png": "/cake_portfolio/static/media/cake1.398060d666ee2033e650.png",
+    "static/media/react.png": "/cake_portfolio/static/media/react.bafc2a1dcbb5c8d3aefc.png",
+    "static/media/sass.png": "/cake_portfolio/static/media/sass.66bd81a2f888a550bdbd.png",
+    "static/media/javascript.png": "/cake_portfolio/static/media/javascript.ec1c0379d0e87cc38946.png",
+    "static/media/tailwindcss.png": "/cake_portfolio/static/media/tailwindcss.e55d1867d1aa2bf20813.png",
+    "index.html": "/cake_portfolio/index.html",
+    "main.4c4253f9.css.map": "/cake_portfolio/static/css/main.4c4253f9.css.map",
+    "main.ead4e89e.js.map": "/cake_portfolio/static/js/main.ead4e89e.js.map"
   },
   "entrypoints": [
-    "static/css/main.176eb86a.css",
-    "static/js/main.98e7e1f1.js"
+    "static/css/main.4c4253f9.css",
+    "static/js/main.ead4e89e.js"
   ]
 }
