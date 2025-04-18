@@ -1,0 +1,137 @@
+@import 'variables';
+
+// Neumorphism Mixins
+@mixin neumorphism-flat {
+  background: $primary-color;
+  box-shadow: 5px 5px 10px $shadow-dark, -5px -5px 10px $shadow-light;
+  border-radius: 15px;
+}
+
+@mixin neumorphism-pressed {
+  background: $primary-color;
+  box-shadow: inset 5px 5px 10px $shadow-dark, inset -5px -5px 10px $shadow-light;
+  border-radius: 15px;
+}
+
+@mixin neumorphism-floating {
+  background: $primary-color;
+  box-shadow: 8px 8px 15px $shadow-dark, -8px -8px 15px $shadow-light;
+  border-radius: 15px;
+}
+
+@mixin neumorphism-concave {
+  background: linear-gradient(145deg, darken($primary-color, 5%), lighten($primary-color, 5%));
+  box-shadow: 5px 5px 10px $shadow-dark, -5px -5px 10px $shadow-light;
+  border-radius: 15px;
+}
+
+@mixin neumorphism-convex {
+  background: linear-gradient(145deg, lighten($primary-color, 5%), darken($primary-color, 5%));
+  box-shadow: 5px 5px 10px $shadow-dark, -5px -5px 10px $shadow-light;
+  border-radius: 15px;
+}
+
+// Neumorphism Button Styles
+.neu-button {
+  @include neumorphism-flat;
+  padding: 12px 25px;
+  border: none;
+  color: $text-color;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  &:hover {
+    color: $accent-color;
+  }
+  
+  &:active {
+    @include neumorphism-pressed;
+  }
+}
+
+// Neumorphism Card Styles
+.neu-card {
+  @include neumorphism-flat;
+  padding: 25px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    @include neumorphism-floating;
+  }
+}
+
+// Neumorphism Input Styles
+.neu-input {
+  @include neumorphism-pressed;
+  border: none;
+  padding: 15px 20px;
+  width: 100%;
+  color: $text-color;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  
+  &:focus {
+    outline: none;
+    box-shadow: inset 3px 3px 7px $shadow-dark, inset -3px -3px 7px $shadow-light, 0 0 0 4px rgba($accent-color, 0.1);
+  }
+}
+
+// Neumorphism Container
+.neu-container {
+  @include neumorphism-flat;
+  padding: 30px;
+  margin: 20px 0;
+}
+
+// Neumorphism Image Container
+.neu-image-container {
+  @include neumorphism-flat;
+  padding: 10px;
+  overflow: hidden;
+  
+  img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+}
+
+// Neumorphism Icon Button
+.neu-icon-button {
+  @include neumorphism-flat;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: $text-color;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  &:hover {
+    color: $accent-color;
+  }
+  
+  &:active {
+    @include neumorphism-pressed;
+  }
+}
+
+// Responsive Adjustments
+@media (max-width: $breakpoint-sm) {
+  .neu-button, .neu-card, .neu-container {
+    padding: 15px;
+  }
+  
+  .neu-icon-button {
+    width: 40px;
+    height: 40px;
+  }
+}

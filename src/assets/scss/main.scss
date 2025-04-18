@@ -1,0 +1,94 @@
+@import 'variables';
+@import 'neumorphism';
+@import '~bootstrap/scss/bootstrap';
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: $primary-color;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.section {
+  padding: 80px 0;
+  
+  @media (max-width: $breakpoint-md) {
+    padding: 60px 0;
+  }
+  
+  @media (max-width: $breakpoint-sm) {
+    padding: 40px 0;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  position: relative;
+  margin-bottom: 50px;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: $accent-color;
+    border-radius: 2px;
+  }
+}
+
+.accent-text {
+  color: $accent-color;
+}
+
+// Custom scroll bar
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $primary-color;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $shadow-dark;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: darken($shadow-dark, 10%);
+}
+
+// Animation
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float {
+  animation: float 5s ease-in-out infinite;
+}
+
+// Portfolio Project Card
+.portfolio-item {
+  margin-bottom: 30px;
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

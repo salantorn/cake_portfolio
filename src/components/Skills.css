@@ -1,0 +1,427 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.skills-showcase {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  padding: 60px 0;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Header Styling */
+.skills-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2a2f4f;
+  margin-bottom: 10px;
+  position: relative;
+  letter-spacing: -0.5px;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.skills-subtitle {
+  color: #6b7280;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 1.5rem auto;
+  position: relative;
+  z-index: 2;
+}
+
+.animated-bar {
+  height: 4px;
+  width: 80px;
+  background: linear-gradient(90deg, #5c6bc0, #3f51b5, #9c27b0);
+  margin: 0 auto 20px;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.animated-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shine 2s infinite;
+}
+
+/* Main Skills 3D Scene */
+.skills-scene {
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-out;
+  padding: 20px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.skills-grid {
+  transform-style: preserve-3d;
+}
+
+/* Individual Skill Cards */
+.skill-card {
+  background: #ffffff;
+  border-radius: 16px;
+  height: 320px;
+  position: relative;
+  transform-style: preserve-3d;
+  box-shadow: 
+    0 5px 15px rgba(0, 0, 0, 0.08),
+    0 15px 35px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              box-shadow 0.4s ease;
+}
+
+.skill-card.active {
+  box-shadow: 
+    0 15px 30px rgba(0, 0, 0, 0.15),
+    0 5px 15px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+}
+
+.skill-card-inner {
+  padding: 25px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+/* Skill Icon Styling */
+.skill-icon-container {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+  transform: translateZ(30px);
+  box-shadow: 
+    0 5px 15px rgba(0, 0, 0, 0.08),
+    0 0 0 2px rgba(0, 0, 0, 0.05) inset;
+  transition: transform 0.3s ease-out;
+  border: 2px solid transparent;
+}
+
+.skill-card.active .skill-icon-container {
+  transform: translateZ(50px);
+}
+
+.skill-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.skill-card.active .skill-icon-wrapper {
+  transform: scale(1.1);
+  animation: pulse 2s infinite;
+}
+
+.skill-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  transform: translateZ(10px);
+}
+
+/* Skill Text Styling */
+.skill-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+  transform: translateZ(25px);
+  transition: transform 0.3s ease, color 0.3s ease;
+  text-align: center;
+}
+
+.skill-card.active .skill-name {
+  transform: translateZ(40px);
+}
+
+.skill-description {
+  font-size: 0.9rem;
+  color: #6b7280;
+  text-align: center;
+  margin-bottom: 20px;
+  transform: translateZ(20px);
+  transition: transform 0.3s ease;
+  line-height: 1.5;
+}
+
+.skill-card.active .skill-description {
+  transform: translateZ(35px);
+}
+
+/* Skill Level Indicator */
+.skill-level-container {
+  width: 100%;
+  transform: translateZ(15px);
+  transition: transform 0.3s ease;
+  margin-top: auto;
+  margin-bottom: 10px;
+}
+
+.skill-card.active .skill-level-container {
+  transform: translateZ(30px);
+}
+
+.skill-level-track {
+  height: 8px;
+  background-color: #f0f2f5;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.skill-level-fill {
+  height: 100%;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  transition: width 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-origin: left center;
+  width: 0; /* Start at 0 and animate to full width */
+}
+
+.skill-card.active .skill-level-fill {
+  animation: fillBar 1.5s forwards cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.skill-level-glow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 15px;
+  filter: blur(5px);
+  opacity: 0.7;
+}
+
+.skill-level-label {
+  display: block;
+  text-align: right;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+/* Interactive Particles Effect */
+.skill-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skill-card.active .skill-particles {
+  opacity: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0;
+  filter: blur(1px);
+}
+
+.skill-card.active .particle {
+  animation: floatParticle 3s infinite ease-in-out;
+}
+
+.skill-card.active .particle:nth-child(1) {
+  top: 20%;
+  left: 15%;
+}
+
+.skill-card.active .particle:nth-child(2) {
+  top: 70%;
+  left: 85%;
+}
+
+.skill-card.active .particle:nth-child(3) {
+  top: 30%;
+  left: 80%;
+}
+
+.skill-card.active .particle:nth-child(4) {
+  top: 80%;
+  left: 20%;
+}
+
+.skill-card.active .particle:nth-child(5) {
+  top: 50%;
+  left: 50%;
+}
+
+/* Card Overlay for Hover Effect */
+.skill-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease, border-color 0.3s ease;
+  pointer-events: none;
+}
+
+.skill-card.active .skill-card-overlay {
+  opacity: 0.4;
+}
+
+/* 3D Decorative Elements */
+.decoration-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-cube {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  animation: floatCube 15s infinite ease-in-out;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.cube-1 {
+  top: 15%;
+  left: 10%;
+}
+
+.cube-2 {
+  bottom: 20%;
+  right: 5%;
+  animation-delay: 3s;
+}
+
+.floating-sphere {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(92, 107, 192, 0.1), rgba(156, 39, 176, 0.1));
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: floatSphere 20s infinite ease-in-out;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.sphere-1 {
+  top: 20%;
+  right: 15%;
+  animation-delay: 5s;
+}
+
+.sphere-2 {
+  bottom: 10%;
+  left: 20%;
+  animation-delay: 8s;
+}
+
+/* Animations */
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fillBar {
+  from { width: 0; }
+  to { width: 100%; } /* This will be overridden by inline style */
+}
+
+@keyframes floatParticle {
+  0% { 
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0;
+  }
+  25% { opacity: 0.5; }
+  50% { 
+    transform: translateY(-20px) translateX(10px) scale(1.2);
+    opacity: 0.3;
+  }
+  75% { opacity: 0.5; }
+  100% { 
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes floatCube {
+  0% { transform: translateY(0) rotateX(0) rotateY(0); }
+  50% { transform: translateY(-30px) rotateX(20deg) rotateY(15deg); }
+  100% { transform: translateY(0) rotateX(0) rotateY(0); }
+}
+
+@keyframes floatSphere {
+  0% { transform: translateY(0) translateX(0); }
+  33% { transform: translateY(-20px) translateX(15px); }
+  66% { transform: translateY(-10px) translateX(-15px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-title {
+    font-size: 2.5rem;
+  }
+  
+  .skills-scene {
+    transform: none !important; /* Disable 3D scene rotation on mobile */
+  }
+  
+  .skill-card {
+    height: 280px;
+  }
+  
+  .floating-cube, .floating-sphere {
+    display: none; /* Hide decorative elements on mobile */
+  }
+}
